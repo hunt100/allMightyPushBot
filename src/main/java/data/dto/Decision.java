@@ -1,13 +1,13 @@
 package data.dto;
 
-import data.enums.LocationHost;
-
 import java.util.Objects;
 
 public class Decision {
     private User user;
-    private LocationHost host;
     private Boolean agree;
+
+    public Decision() {
+    }
 
     public User getUser() {
         return user;
@@ -15,14 +15,6 @@ public class Decision {
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    public LocationHost getHost() {
-        return host;
-    }
-
-    public void setHost(LocationHost host) {
-        this.host = host;
     }
 
     public Boolean getAgree() {
@@ -38,11 +30,11 @@ public class Decision {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Decision decision = (Decision) o;
-        return Objects.equals(user, decision.user) && host == decision.host;
+        return Objects.equals(user, decision.user);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(user, host);
+        return Objects.hash(user);
     }
 }

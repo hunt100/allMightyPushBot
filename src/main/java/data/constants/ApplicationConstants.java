@@ -4,14 +4,20 @@ public interface ApplicationConstants {
     interface Commands {
         interface Igramba {
             String PATTERN = "/igramba";
-            String CALLBACK_BTN_YES = "igramba_yes";
-            String CALLBACK_BTN_NO = "igramba_no";
+            String BTN_YES = "igrambaBtnYes";
+            String BTN_NO = "igrambaBtnNo";
         }
 
         interface Gulamba {
             String PATTERN = "/gulamba";
-            String CALLBACK_BTN_YES = "gulamba_yes";
-            String CALLBACK_BTN_NO = "gulamba_no";
+            String BTN_YES = "gulambaBtnYes";
+            String BTN_NO = "gulambaBtnNo";
+            String TO_DANILA = "gulambaToDanilaBtn";
+            String TO_VLADIMIR = "gulambaToVladimirBtn";
+            String TO_ANVAR = "gulambaToAnvarBtn";
+            String TO_DANILA_MSG = "userDecisionDanila";
+            String TO_VLADIMIR_MSG = "userDecisionVladimir";
+            String TO_ANVAR_MSG = "userDecisionAnvar";
         }
     }
 }

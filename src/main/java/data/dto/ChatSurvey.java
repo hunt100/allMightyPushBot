@@ -1,7 +1,6 @@
 package data.dto;
 
 import data.enums.LeisureType;
-import data.enums.LocationHost;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -9,12 +8,19 @@ import java.util.Set;
 public class ChatSurvey {
     private Long chatId;
     private Set<Decision> decisions;
+    private Set<GameSubDecision> gameSubDecisions;
+    private Set<WalkSubDecision> walkSubDecisions;
     private LeisureType type;
 
     public ChatSurvey(Long chatId, LeisureType type) {
         this.chatId = chatId;
         this.type = type;
         this.decisions = new HashSet<>();
+        if (LeisureType.PLAY.equals(type)) {
+            gameSubDecisions = new HashSet<>();
+        } else {
+            walkSubDecisions = new HashSet<>();
+        }
     }
 
     public Long getChatId() {
@@ -41,14 +47,19 @@ public class ChatSurvey {
         this.type = type;
     }
 
-    public boolean isGeneralDecisionForUserExist(User user) {
-        return isDecisionForUserWithTypeExist(user, LocationHost.GENERAL);
+    public Set<GameSubDecision> getGameSubDecisions() {
+        return gameSubDecisions;
     }
 
-    public boolean isDecisionForUserWithTypeExist(User user, LocationHost host) {
-        return decisions
-                .stream()
-                .filter(decision -> user.getId().equals(decision.getUser().getId()))
-                .anyMatch(decision -> host.equals(decision.getHost()));
+    public void setGameSubDecisions(Set<GameSubDecision> gameSubDecisions) {
+        this.gameSubDecisions = gameSubDecisions;
+    }
+
+    public Set<WalkSubDecision> getWalkSubDecisions() {
+        return walkSubDecisions;
+    }
+
+    public void setWalkSubDecisions(Set<WalkSubDecision> walkSubDecisions) {
+        this.walkSubDecisions = walkSubDecisions;
     }
 }
