@@ -1,13 +1,11 @@
 package handler;
 
-import data.constants.ApplicationConstants;
 import data.constants.ApplicationConstants.Commands.Igramba;
 import data.dto.ChatSurvey;
 import data.dto.Decision;
 import data.dto.User;
 import data.enums.Language;
 import data.enums.LeisureType;
-import data.enums.LocationHost;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -18,6 +16,7 @@ import util.LocaleUtils;
 
 import java.util.List;
 
+// TODO: 26.02.2022 Add opportunity to check in which game we will play, analogue with Gulamba 
 public class IgrambaCommand extends AbstractCommand implements Callback {
 
     private final Logger log = LoggerFactory.getLogger(IgrambaCommand.class);

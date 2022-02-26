@@ -18,6 +18,7 @@ public class MyBot extends TelegramLongPollingBot {
     private final String botToken;
     private final List<Command> commands;
 
+    // TODO: 26.02.2022 Add command for write how many fuck ups Ali have
     public MyBot() {
         super();
         Properties properties = PropertyUtils.getProperties();
