@@ -13,6 +13,7 @@ public class Main {
         try {
             TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
             botsApi.registerBot(new MyBot());
+//            asdasdsadsadsadsadsa
         } catch (TelegramApiException e) {
             log.error("Error during bot init: ", e);
         }
